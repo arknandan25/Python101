@@ -7,22 +7,43 @@ print(zip_codes['jack'])
 
 # list all keys of the dictionary
 print(list(zip_codes))
+
 # dict.keys() return an iterable view of the dictionary's keys without converting to a list
 for x in zip_codes.keys():
     print(x)
+# ark
+# jack
+# tom
+
 # dict.values() : list all values of the dictionary
 for x in zip_codes.values():
     print(x)
+# 12345
+# 23456
+# 88765
+
 # dict.items() returns tuples for each key:value entries
 for x in zip_codes.items():  # or for x,y in zip_codes.items()  to access key:value separately
     print(x)
+# ('ark', 12345)
+# ('jack', 23456)
+# ('tom', 88765)
 
 # sorted keys (by name) of the dictionary
 print(sorted(zip2))
 
-# conditional expressions
+# conditional expressions, searching for key in dict
 print('ark' in zip_codes)  # True
 print('new jersey' in zip2)  # False
+
+# print all keys corresponding to a particular value from a dict:
+value = 10
+dict_search = {'Ark': 10, 'Jack': 232, 'YoYo': 10}
+for name, val in dict_search.items():
+    if val == value:
+        print(name)
+# Ark
+# YoYo
 
 # delete key:value from dictionary
 del zip2['dublin']
@@ -30,6 +51,7 @@ print(zip2)
 zip2.pop("new delhi")
 print(zip2)
 
+# ----------------------------------------------------------------------------------------------------------------------
 # dict comprehension: used to create dictionaries from arbitrary key:value expressions
 # {key: value for (key, value) in dict.items()}
 zip3 = {x: x ** 2 for x in range(1, 11)}
@@ -40,6 +62,7 @@ print(zip4)
 #  Always try to replace simple loops and lambdas with comprehensions based on the type of o/p needed
 #  If list needed use list comp, else dict comprehension
 
+# ----------------------------------------------------------------------------------------------------------------------
 # deep and shallow copy
 test_dict = {
     "brand": "Ford",
@@ -59,7 +82,7 @@ test_dict_shallow_copy.pop("model")
 print(test_dict_shallow_copy)
 print(test_dict)
 
-
+# ----------------------------------------------------------------------------------------------------------------------
 #  passing a dict as a dictionary to a function [highly used & causes problems lol]
 # 1st way: Keyword Arguments (**dict) and Default Arguments in Function arguments
 def func(var1, var2=None, **kwargs):
@@ -68,12 +91,15 @@ def func(var1, var2=None, **kwargs):
     print(kwargs)
 
 
+#  in this example all the parameters in function call are independent: 2,None sent for 2nd, kwargs(dict)
 kwargs = {"priority": None, "alarm1": "Bear Alarm", "service": "cloud watch"}
 func(2, **kwargs)
 # 2
 # None
 # {'priority': None, 'alarm1': 'Bear Alarm', 'service': 'cloud watch'}
 
+
+# in this example the keys of the dict correspond to the function arguments
 kwargs1 = {"var1": None, "var2": "Bear Alarm", "service": "cloud watch"}
 func(**kwargs1)
 # None
@@ -117,6 +143,29 @@ cheeseshop(
 # ----------------------------------------
 # key1 : Hello value1 for kwargs
 # key2 : value2 for kwargs
+
+
+# 4th just more sample
+def fruit_bowl(*fruits):
+    print("Following fruits would make a mean fruit salad:")
+    for f in fruits:
+        print(f)
+
+
+fruits = ['banana', 'apple', 'watermelon', 'mango', 'kiwi', 'orange', 'dragon fruit']
+fruit_bowl(*fruits)
+# in the above call, if you have * or ** in the function definition then *,** should be used in the call as well
+# Following fruits would make a mean fruit salad:
+# banana
+# apple
+# watermelon
+# mango
+# kiwi
+# orange
+# dragon fruit
+# ----------------------------------------------------------------------------------------------------------------------
+
+
 
 
 

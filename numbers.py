@@ -17,6 +17,7 @@ print(word[0])  # T
 print(word[6])  # s
 print(word[-1])  # t (Last Character)
 print(word[-4])  # h  (4th Last Character)
+
 # slicing
 print(word[0:2])  # characters from index 0 to 1 (0 to n-1)
 print(word[3:6])  # characters from index 3 to 5: te_

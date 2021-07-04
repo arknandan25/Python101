@@ -1,19 +1,19 @@
 # lambda arguments: expression
 
 add10 = lambda x: x+10
-print(add10(50)) #60
+print(add10(50))  # 60
+
 
 # above lambda function is equivalent to this function
-
 def add10_func(x):
     return x+10
 
 
-mult = lambda x,y: x*y
-print(mult(3,7)) #21
+mult = lambda x, y: x*y
+print(mult(3, 7))  # 21
 
 # next example:: sorted function
-points2D = [(1,2), (15,1), (5,-1), (10,4)]
+points2D = [(1, 2), (15, 1), (5, -1), (10, 4)]
 print(points2D[0])
 print(points2D[0][0])
 print(points2D[0][1])
@@ -40,11 +40,8 @@ print(points_2Dsorted_other)
 # [(1, 2), (5, -1), (10, 4), (15, 1)]
 # [3, 4, 14, 16] ^^
 
-
-
 # ----------------------------------
-a =[1,2,3,4,5]
-
+a = [1, 2, 3, 4, 5]
 print(a)
 # print(a+5)
 print(a*5)
@@ -58,14 +55,14 @@ print(a*5)
 # next example :: map function
 # map(func, iterable seq)
 # aim: is to get a list with *2 values of a
-b= map(lambda x:x*2, a)
+b = map(lambda x:x*2, a)
 print(b)
 print(list(b))
 # <map object at 0x100827bb0>
 # [2, 4, 6, 8, 10]
 
-# same functionaliy can be achieved via list comprehension
-c = [x*2 for x in a ]  
+# same functionality can be achieved via list comprehension
+c = [x*2 for x in a]
 print("double c:", c)
 
 
@@ -78,6 +75,6 @@ print(b)
 print(list(b))
 
 #  the same functionality can be achieved by the list comprehension
-c = [x for x in a if x%2 == 0]
+c = [x for x in a if x % 2 == 0]
 print(c) 
 # ----------------------------------
