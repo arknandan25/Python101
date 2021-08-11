@@ -45,11 +45,99 @@ for name, val in dict_search.items():
 # Ark
 # YoYo
 
-# delete key:value from dictionary
+# Updating the dict
+# How to update a value corresponding to a key in dict?
+t = {}
+t['A'] = 1
+t['B'] = 5
+t['C'] = 2
+print("This is an example of updating the dict; before updating:", t)
+t['B'] = 3
+print("This is an example of updating the dict; after updating:", t)
+# This is an example of updating the dict; before updating: {'A': 1, 'B': 5, 'C': 2}
+# This is an example of updating the dict; after updating: {'A': 1, 'B': 3, 'C': 2}
+
+# Another way is using the update() method
+# The update() method adds element(s) to the dictionary if the key is not in the dict
+# If the key is in the dictionary, it updates the key with the new value.
+# works with another dict as input or tuples
+t1 = {'D': 44}
+t2 = {'D': 69}
+t.update(t1)
+print("Adding new key:value using update:", t)
+t.update(t2)
+print("Updating  existing key 'D' to a new value using update:", t)
+t.update(E=490, F=333, D=7777)
+print("Adding and Updating  the dict 't' using update:", t)
+t.update()
+print("Empty update on a dict will do nothing", t)
+# Adding new key:value using update: {'A': 1, 'B': 3, 'C': 2, 'D': 44}
+# Updating  existing key 'D' to a new value using update: {'A': 1, 'B': 3, 'C': 2, 'D': 69}
+# Adding and Updating  the dict 't' using update: {'A': 1, 'B': 3, 'C': 2, 'D': 7777, 'E': 490, 'F': 333}
+# Empty update on a dict will do nothing {'A': 1, 'B': 3, 'C': 2, 'D': 7777, 'E': 490, 'F': 333}
+
+# Deleting stuff from dict and deleting the dict complete!
+# delete key:value pair completely from dictionary
+# can be done via del dict['key'] or dict.pop('key')
+# Understanding what pop() returns can get a bit tricky:
+# If key is found - the value corresponding the removed key from the dictionary
+# If key is not found and default argument is not specified - KeyError exception is raised
+# If key is not found and default argument is specified- value specified as the second argument (default)
+
 del zip2['dublin']
 print(zip2)
-zip2.pop("new delhi")
+# {'washington dc': 'USA', 'new delhi': 'india'} <- dublin:value has been deleted
+
+print("The default return type of pop is the value it removes, if key is found:", zip2.pop("new delhi"))
+# The default return type of pop is the key:vale it removes, if key is found: india
+
 print(zip2)
+# {'washington dc': 'USA'}
+
+k = zip2.pop("jharkhand", "This is an optional value returned as jharkhand is not a key of zip2")
+print("We can specify what pop returns, if key is not found:", k)
+# We can specify what pop returns, if key is not found: This is an optional value returned as jharkhand is not a key of zip2
+
+# [ERROR]
+# k = zip2.pop("jharkhand")
+# print("When an undefined key is given to pop for removal, it returns KeyError:", k)
+# Traceback (most recent call last):
+#   File "/Users/arkchauhan/Documents/Python/dictionary.py", line 90, in <module>
+#     k = zip2.pop("jharkhand")
+# KeyError: 'jharkhand'
+
+# [ERROR] Delete entire Whole dict
+# del zip2
+print("Just deleted dict 'zip2', thus getting error:", zip2)
+# Traceback (most recent call last):
+#   File "/Users/arkchauhan/Documents/Python/dictionary.py", line 105, in <module>
+#     print("Just deleted dict 'zip2', thus getting error:", zip2)
+# NameError: name 'zip2' is not defined
+
+# ----------------------------------------------------------------------------------------------------------------------
+# dict.get() is another way of retrieving data from a dict
+# get method returns the value for the specified key if the key is in the dictionary.
+# get(key, value) method takes maximum of two parameters:
+# key - key to be searched in the dictionary
+# value (optional) - Value to be returned if the key is not found. The default value is None.
+dict_abc = {"yellow_key": "yellow_value", "green_key": "green_value"}
+print("Using get() method here:", dict_abc.get("yellow_key"))
+print("Using get() method when key not found, returns None:", dict_abc.get("blue_key"))
+print("Using get() method undefined key, with optional value:", dict_abc.get("blue_key", "blue_value"))
+print("Using get() method defined key, with optional value, return the original dict value not optional!:", dict_abc.get("green_key", "red_value"))
+# Using get() method here: yellow_value
+# Using get() method when key not found, returns None: None
+# Using get() method undefined key, with optional value: blue_value
+# Using get() method defined key, with optional value, return the original dict value not optional!: green_value
+
+# Difference between dict[key] and dict.get()
+# print("dict[key] raises KeyError if key not found:", dict_abc["blue_key"])
+print("dict.get() returns default value None if key not found:", dict_abc.get("blue_key"))
+# Traceback (most recent call last):
+#   File "/Users/arkchauhan/Documents/Python/dictionary.py", line 67, in <module>
+#     print("dict[key] raises KeyError if key not found:", dict_abc["blue_key"])
+# KeyError: 'blue_key'
+# dict.get() returns default value None if key not found: None
 
 # ----------------------------------------------------------------------------------------------------------------------
 # dict comprehension: used to create dictionaries from arbitrary key:value expressions
@@ -85,6 +173,8 @@ print(test_dict)
 # ----------------------------------------------------------------------------------------------------------------------
 #  passing a dict as a dictionary to a function [highly used & causes problems lol]
 # 1st way: Keyword Arguments (**dict) and Default Arguments in Function arguments
+
+
 def func(var1, var2=None, **kwargs):
     print(var1)
     print(var2)
