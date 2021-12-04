@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # 1st example is the basic, Just to get familiarized with Python OOP (No complications here)
 # The self parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.
 # It does not have to be named self , you can call it whatever you like, but it has to be the first parameter of any function in the class
@@ -78,12 +79,16 @@ print(SampleClass.class_method())  # ('This is a  class method', <class '__main_
 print(SampleClass.static_method())  # This is a static method
 # print(SampleClass.instance_method())  # Type Error: instance_method() missing 1 required positional argument: 'self'
 
+# **********************************************************************************************************************
+# More examples on OOP Concepts
 
 # **********************************************************************************************************************
 # Inheritance
 # Inheritance allows us to define a class that inherits all the methods and properties from another class.
 # Parent class is the class being inherited from, also called base class.
 # Child class is the class that inherits from another class, also called derived class.
+
+
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -120,11 +125,55 @@ class Student2(Person):
 
 
 s2 = Student2("James", 33, "M")
+# import ipdb
+# ipdb.set_trace()
 s2.print_details()  # Details printed in the Student 2 class. This method is overridden since same belongs to parent class as well.
 
 
 # inherited all the properties and methods of the Person class
 
-
+# **********************************************************************************************************************
+# Data Classes
 
 # **********************************************************************************************************************
+# Magic Object Methods
+# __call__ method and __init__ method
+class A:
+    def __init__(self, a, b, c):
+        print("You are in the init method of A")
+        print(a, b, c)
+
+    def __call__(self, *args, **kwargs):
+        print("You are in call of A")
+        print(args)
+        a = args[0]
+        b = args[1]
+        c = args[2]
+        print(a, b, c)
+        return a * b * c
+
+
+obj = A(2, 3, 4)
+x = obj(5, 6, 7)
+print(x)
+# **********************************************************************************************************************
+# Polymorphism
+
+
+def test(a: float):
+    print(a * 1.45)
+
+
+def test(a: int, b: float):
+    print(a * b)
+
+
+test(12, 34.0)
+test(23.444)
+# 408.0
+# Traceback (most recent call last):
+#   File "./oops.py", line 150, in <module>
+#     test(23.444)
+# TypeError: test() missing 1 required positional argument: 'b'
+
+# Function overloading is not allowed in python, last test is the only one that works

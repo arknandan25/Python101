@@ -1,8 +1,8 @@
 import pytest
 # calling test script: pytest test_file_name.py
-# specific test: py.test -k test_method3 -v
+# specific test: py.test -k test_method3 -v    <- this is the main test command
 # or : py.test -m three
-
+# ipdb dosen't work in the test :(
 
 def func(x):
     return x*1
