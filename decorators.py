@@ -1,4 +1,20 @@
 #!/usr/bin/env python3
+
+# Understanding a simple example of closures
+def make_multiplier_of(x):
+    def multiplier(n):
+        return x * n
+    return multiplier
+
+times = make_multiplier_of(3)
+import ipdb
+ipdb.set_trace()
+print(times(100))
+# ipdb> times
+# <function make_multiplier_of.<locals>.multiplier at 0x7fb2afd521e0>
+# 300
+
+# Understanding how function reference is returned
 def func(a, b):
     return a + b
 
@@ -131,3 +147,18 @@ hello_kitty(2, 50)
 #      36         ipdb.set_trace()
 # ---> 37         return response
 #      38     return inner_woah
+
+
+# Simple Decorator 2
+def the_decorator(original_function):
+    def wrapper():
+        original_function()
+    return wrapper
+
+
+def my_func():
+    print("Hello this a decorator")
+
+c = the_decorator(my_func) # is same as @the_decorator on top of my_func
+c()
+# Hello this a decorator

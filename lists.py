@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # List is a complex data type; Is Mutable (I.e you can make changes after it is created)
 #         [0, 1, 2, 3, 4]    Index from left
 numbers = [1, 4, 9, 16, 25]
@@ -21,7 +22,8 @@ print(numbers[:])  # entire list: [1, 4, 9, 16, 25]
 print(numbers[:-2])  # [1, 4, 9] i.e 0 to -2-1 = -3 -> 0 to -3
 #  or
 print(numbers[:len(numbers)-2])  # [1, 4, 9] as [0 to n-1] = [0 to 5-2-1] = [0 to 2] = index 0, 1, 2
-
+# reverse list by slicing
+print(numbers[::-1])  # [25, 16, 9, 4, 1]
 
 # list concatenation
 print(numbers + numbers2)  # [1, 4, 9, 16, 25, 10, 100, 200, 300, 400, 500]
