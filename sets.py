@@ -6,6 +6,9 @@ print(len(new_set))  # 3
 print(type(new_set))  # <class 'set'>
 print(new_set)  # {'hello', True, 12132342}
 
+# Empty Set Initialization
+s = set()
+
 #  Set Constructor
 set2 = set((True, False, "Hello World"))
 print(set2)  # {False, True, 'Hello World'}

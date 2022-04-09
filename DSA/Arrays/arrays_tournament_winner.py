@@ -19,7 +19,8 @@ def tournamentWinner(competitions, results):
 			current_best_team = winning_team
 	
 	print(score)
-    # return current_best_team
+
+# return current_best_team
 
 # this solves the problem but there is a problem:
 # finding the maximum or minimum in  a dictionary 

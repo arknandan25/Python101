@@ -16,13 +16,17 @@ $   ends with
 \b  returns a match where the specified characters are present at the beginning or the end of the string
 \s  returns a match where string contians a white space character
 \S  returns a match where string doesnot contian a white space character
+\w
 \W  returns anything except letters and numbers i.e only spaces & period
 \D  returns anything except numbers i.e letters, spaces and punctuations
 
 findall()   returns a list of all matches
 search()    returns a match object, if there is any match within the string, else returns None
-
+match()
+compile()
 """
+
+# Need to heavily improve this guide here
 
 str1 = "The ship set sail on the ocean"
 str2 = "Ships set sail on the ocean to go places"
