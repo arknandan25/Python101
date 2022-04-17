@@ -14,16 +14,23 @@ $   ends with
 ()  capture and group
 
 \b  returns a match where the specified characters are present at the beginning or the end of the string
-\s  returns a match where string contians a white space character
-\S  returns a match where string doesnot contian a white space character
-\w
-\W  returns anything except letters and numbers i.e only spaces & period
+\s  returns a match where string contains a white space character
+\S  returns a match where string does not contain a white space character
+\w  Matches any alphanumeric character; this is equivalent to the class [a-zA-Z0-9_].
+\W  returns anything except letters and numbers i.e only spaces & period [^a-zA-Z0-9_]**
 \D  returns anything except numbers i.e letters, spaces and punctuations
 
 findall()   returns a list of all matches
 search()    returns a match object, if there is any match within the string, else returns None
 match()
 compile()
+
+Regex Group
+
+Regex output to dict
+
+
+
 """
 
 # Need to heavily improve this guide here
@@ -77,7 +84,21 @@ print(re.findall(r'\bf[a-z]*', 'here is a foot of the fastest sandwich'))
 
 
 
+"""
+Working with Sets
 
+
+**When given a list of characters like [abc] and put a caret before them like: [^abc] not this means Returns a match for any character EXCEPT a, b, c
+"""
+
+
+"""
+Regex group
+"""
+
+"""
+
+"""
 
 
 
