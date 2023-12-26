@@ -127,7 +127,7 @@ print("The number of Employee:", Employee.count)
 """
 Constructor Return Value
 
-In Python, the constructor does not return any value. Therefore, while declaring a constructor, we don’t have anything like return type. 
+In Python, the constructor does not return any value. Therefore, while declaring a constructor, we don't have anything like return type. 
 Instead, a constructor is implicitly called at the time of object instantiation. Thus, it has the sole purpose of initializing the instance variables.
 
 The __init__() is required to return None. We can not return something else. If we try to return a non-None value from the __init__() method, it will raise TypeError.
@@ -153,7 +153,7 @@ Destructor is used to perform the clean-up activity before destroying the object
 
 Python has a garbage collector that handles memory management automatically. For example, it cleans up the memory when an object goes out of scope.
 
-But it’s not just memory that has to be freed when an object is destroyed. 
+But it's not just memory that has to be freed when an object is destroyed. 
 We must release or close the other resources object were using, such as open files, database connections, cleaning up the buffer or cache. 
 To perform all those cleanup tasks we use destructor in Python. 
 
